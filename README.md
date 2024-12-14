@@ -98,7 +98,7 @@ Go to the Monitor Configuration page and disable monitors other than the virtual
 
 ## Customize Resolution
 
-[Parsec official website custom resolution](https://support.parsec.app/hc/en-us/articles/4423615425293-VDD-Advanced-Configuration)
+[VDD Advanced Configuration](https://support.unity.com/hc/en-us/articles/26828920583444-VDD-Advanced-Configuration)
 
 The current version supports 5 custom resolutions.
 
@@ -190,6 +190,6 @@ Undo Command 栏填入 `cmd /C "vddswitcher.exe的路径"`
 
 ## 自定义分辨率
 
-[parsec官网自定义分辨率](https://support.parsec.app/hc/en-us/articles/4423615425293-VDD-Advanced-Configuration)
+[VDD高级设置](https://support.unity.com/hc/en-us/articles/26828920583444-VDD-Advanced-Configuration)
 
 目前版本支持5个自定义分辨率
