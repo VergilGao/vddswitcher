@@ -1,4 +1,108 @@
-# vddswitcher
+## Table of Contents
+- [Introduction about vddswitcher](#Introduction-about-vddswitcher)
+- [How to use](#How-to-use)
+- [Supported resolution](#Supported-resolution)
+- [Customize Resolution](#Customize-Resolution)
+
+## 目录
+- [介绍](#关于vddswitcher)
+- [使用方法](#使用方法)
+- [支持的分辨率](#支持的分辨率)
+- [自定义分辨率](#自定义分辨率)
+
+# Introduction about vddswitcher
+
+A "just work" VDD program for Sunshine streaming.
+
+Main features:
+
+- Create a virtual display when streaming starts.
+
+- Automatically set the resolution of the virtual display based on the resolution set by the Moonlight client (if supported).
+
+- Close the virtual display when streaming ends.
+
+## How to use
+
+Make sure you have installed the following drivers
+
+- [parsec-vdd-v0.41](https://builds.parsec.app/vdd/parsec-vdd-0.41.0.0.exe) 
+
+Place `vddswitcher.exe` and `vddswitcherd.exe` in your preferred location.
+
+For first-time use, you need to configure the virtual desktop as the main display:
+
+Right-click the Windows icon - Run - Enter `cmd`
+In the opened cmd window, type
+
+`cmd /C "your_path_to_vddswitcherd.exe" -x "your_main_display_pixel_width" -y "your_main_display_pixel_height" -r "your_main_display_refresh_rate"`
+
+This will create a virtual display with the same resolution as your main display.
+
+Go to the display configuration page, select the created virtual display, and check the option to set it as the main display. (Note: This operation will make your desktop look strange, but everything can be restored.)
+
+If you find that your mouse is missing and some windows have moved to the virtual display, it’s usually easier to just restart your computer.
+
+After restarting the computer, you will find that the virtual display has disappeared.
+
+Open Sunshine and go to `Configuration - General`.
+
+In the Do Command field, enter `cmd /C "path_to_vddswitcherd.exe" -x %SUNSHINE_CLIENT_WIDTH% -y %SUNSHINE_CLIENT_HEIGHT% -r %SUNSHINE_CLIENT_FPS%`
+
+For example:
+
+`cmd /C "D:\game\utils\vddswitcher\vddswitcherd.exe" -x %SUNSHINE_CLIENT_WIDTH% -y %SUNSHINE_CLIENT_HEIGHT% -r %SUNSHINE_CLIENT_FPS%`
+
+In the Undo Command field, enter `cmd /C "path to vddswitcher.exe"`
+
+For example:
+
+`cmd /C "D:\game\utils\vddswitcher\vddswitcher.exe"`
+
+Save and submit, then wait for a restart. Use Moonlight to access the desktop.
+
+Go to the Monitor Configuration page and disable monitors other than the virtual monitor to save energy.
+
+## Supported resolution
+
+| Resolution   | Common name      | Aspect ratio         | Refresh rates (Hz)
+| -            | :-:              | :-:                  | :-:
+| 4096 x 2160  | DCI 4K           | 1.90:1 (256:135)     | 24/30/60/144/240
+| 3840 x 2160  | 4K UHD           | 16:9                 | 24/30/60/144/240
+| 3840 x 1600  | UltraWide        | 24:10                | 24/30/60/144/240
+| 3840 x 1080  | UltraWide        | 32:9 (2x 16:9 FHD)   | 24/30/60/144/240
+| 3440 x 1440  |                  | 21.5:9 (43:18)       | 24/30/60/144/240
+| 3240 x 2160  |                  | 3:2                  | 60
+| 3200 x 1800  | 3K               | 16:9                 | 24/30/60/144/240
+| 3000 x 2000  |                  | 3:2                  | 60
+| 2880 x 1800  | 2.8K             | 16:10                | 60
+| 2880 x 1620  | 2.8K             | 16:9                 | 24/30/60/144/240
+| 2736 x 1824  |                  |                      | 60
+| 2560 x 1600  | 2K               | 16:10                | 24/30/60/144/240
+| 2560 x 1440  | 2K               | 16:9                 | 24/30/60/144/240
+| 2560 x 1080  | UltraWide        | 21:9                 | 24/30/60/144/240
+| 2496 x 1664  |                  |                      | 60
+| 2256 x 1504  |                  |                      | 60
+| 2048 x 1152  |                  |                      | 60/144/240
+| 1920 x 1200  | FHD              | 16:10                | 60/144/240
+|**1920 x 1080**| **FHD**         | **16:9**             | 24/30/**60**/144/240
+| 1800 x 1200  | FHD              | 3:2                  | 60
+| 1680 x 1050  | HD+              | 16:10                | 60/144/240
+| 1600 x 1200  | HD+              | 4:3                  | 24/30/60/144/240
+|  1600 x 900  | HD+              | 16:9                 | 60/144/240
+|  1440 x 900  | HD               | 16:10                | 60/144/240
+|  1366 x 768  |                  |                      | 60/144/240
+|  1280 x 800  | HD               | 16:10                | 60/144/240
+|  1280 x 720  | HD               | 16:9                 | 60/144/240
+
+
+## Customize Resolution
+
+[Parsec official website custom resolution](https://support.parsec.app/hc/en-us/articles/4423615425293-VDD-Advanced-Configuration)
+
+The current version supports 5 custom resolutions.
+
+# 关于vddswitcher
 
 一个 just work 的用于 sunshine 串流的 vdd 程序。
 
@@ -82,6 +186,7 @@ Undo Command 栏填入 `cmd /C "vddswitcher.exe的路径"`
 |  1366 x 768  |                  |                      | 60/144/240
 |  1280 x 800  | HD               | 16:10                | 60/144/240
 |  1280 x 720  | HD               | 16:9                 | 60/144/240
+
 
 ## 自定义分辨率
 
